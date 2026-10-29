@@ -15,10 +15,11 @@ const baseConfig = {
             },
             {
                 test: /\.ts$/,
-                use: {loader: 'ts-loader',
+                use: {
+                    loader: 'ts-loader',
                     options: {
-                        transpileOnly: true
-                    }
+                        transpileOnly: true,
+                    },
                 },
                 exclude: /node_modules/,
             },
