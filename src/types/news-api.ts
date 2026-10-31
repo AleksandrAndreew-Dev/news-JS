@@ -4,9 +4,8 @@ export interface Source {
 }
 
 export enum ApiStatus {
-    Ok =  'ok',
-    Error = 'error'
-
+    Ok = 'ok',
+    Error = 'error',
 }
 
 export interface Article {

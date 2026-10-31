@@ -19,8 +19,6 @@ class Sources {
 
         data.forEach((item) => {
             const sourceClone = sourceItemTemp.content.cloneNode(true) as DocumentFragment;
-         
-
 
             const sourceContainer = this.getEl<HTMLElement>(sourceClone, '.source__item-name');
             sourceContainer.textContent = item.name;
