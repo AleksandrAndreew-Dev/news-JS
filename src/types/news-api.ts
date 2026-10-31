@@ -3,6 +3,12 @@ export interface Source {
     name: string;
 }
 
+export enum ApiStatus {
+    Ok =  'ok',
+    Error = 'error'
+
+}
+
 export interface Article {
     source: Source;
     author: string | null;
@@ -15,7 +21,7 @@ export interface Article {
 }
 
 export interface ArticleResponse {
-    status: string;
+    status: ApiStatus;
     totalResults: number;
     articles: Article[];
 }
@@ -31,6 +37,6 @@ export interface SourceDetails {
 }
 
 export interface SourcesResponse {
-    status: string;
+    status: ApiStatus;
     sources: SourceDetails[];
 }
