@@ -1,18 +1,18 @@
-type callbackFn<T> = (data: T) => void;
+export type callbackFn<T> = (data: T) => void;
 
-type Options = Record<string, string>
+type Options = Record<string, string>;
 
 class Loader {
     protected baseLink: string;
-    protected options: Options
+    protected options: Options;
 
-    constructor(baseLink: string, options: Options ) {
+    constructor(baseLink: string, options: Options) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     public getResp<T>(
-        { endpoint, options = {} }: {endpoint: string, options?: Options},
+        { endpoint, options = {} }: { endpoint: string; options?: Options },
         callback: callbackFn<T> = () => {
             console.error('No callback for GET response');
         }
@@ -51,4 +51,3 @@ class Loader {
 }
 
 export default Loader;
-
