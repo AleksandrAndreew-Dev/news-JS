@@ -10,7 +10,7 @@ class Sources {
         return el;
     }
 
-    draw(data: Pick<SourceDetails, "id" | "name">[]): void {
+    draw(data: Pick<SourceDetails, 'id' | 'name'>[]): void {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector<HTMLTemplateElement>('#sourceItemTemp');
         if (!sourceItemTemp) {
