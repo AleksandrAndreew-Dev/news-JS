@@ -1,6 +1,6 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import {ArticleResponse, SourcesResponse} from '../../types/news-api';
+import { ArticleResponse, SourcesResponse, ApiStatus } from '../../types/news-api';
 
 export class AppView {
     protected news: News;
@@ -11,13 +11,21 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: ArticleResponse) {
-        const values = data?.articles ? data?.articles : [];
+    drawNews(data: ArticleResponse): void {
+        if (data.status !== ApiStatus.Ok) {
+            console.error(`Failed to load news: ${data.status}`);
+            return;
+        }
+        const values = data.articles ?? [];
         this.news.draw(values);
     }
 
-    drawSources(data: SourcesResponse) {
-        const values = data?.sources ? data?.sources : [];
+    drawSources(data: SourcesResponse): void {
+        if (data.status !== ApiStatus.Ok) {
+            console.error(`Failed to load sources: ${data.status}`);
+            return;
+        }
+        const values = data.sources ?? [];
         this.sources.draw(values);
     }
 }
