@@ -14,22 +14,92 @@ header h1 {
 }
 
 footer {
-    height: 100px;
+    min-height: 100px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 30px;
 }
+
+footer li p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+footer li {
+    display: flex;
+    align-items: center;
+    color: #fff; 
+    font-size: 14px;
+}
+
+footer a {
+    color: #70d6ff; 
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #3fcc59;
+}
+
 footer .copyright {
     font-size: 14px;
-    color: #333;
+    color: #a2a2a2;
     text-align: center;
 }
+
 footer .copyright a {
-    color: #444;
+    color: #70d6ff;
 }
-footer .copyright a:hover {
-    color: #555;
-}
+
 footer .copyright:before {
     content: '©';
+    margin-right: 4px;
+}
+
+
+.rs-logo {
+    display: block;
+    transition: transform 0.2s;
+}
+
+.rs-logo:hover {
+    transform: scale(1.1); 
+}
+
+.github-logo {
+    display: inline-block;
+    width: 50px;
+    height: auto;
+}
+
+@media (min-width: 640px) {
+    footer {
+        flex-direction: row;
+        justify-content: space-between; 
+        padding: 20px 40px;
+    }
+
+    footer ul {
+        flex-direction: row; 
+        gap: 30px;
+    }
 }
