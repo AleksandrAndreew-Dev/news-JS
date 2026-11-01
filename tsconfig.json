@@ -1,0 +1,15 @@
+{ 
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "esnext",
+    "allowJs": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
